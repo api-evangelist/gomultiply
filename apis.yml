@@ -1,7 +1,17 @@
 aid: gomultiply
 name: Gomultiply
-description: Gomultiply is a company surfaced as a portfolio company of mayfield and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Multiply (gomultiply.com) is an AI-native paid media agency for B2B companies
+  that combines proprietary self-learning advertising AI with human growth
+  strategists. The platform plugs into a customer's sales calls and CRM data to
+  learn why buyers actually convert, then uses 25+ specialized AI agents
+  (customer insights, keyword, creative design, A/B testing, bidding, and
+  attribution) to generate, launch, and continuously optimize hundreds of
+  personalized ad experiments across Google and LinkedIn. Founded by Matt Jayson
+  (formerly Google and Brex) and Ashish Warty (formerly SVP Engineering at
+  HackerOne, Dropbox, and Airship), Multiply emerged from stealth with $9.5M led
+  by Mayfield and reports 300-500% increases in sales meetings booked and
+  pipeline generated for its B2B customers.
 url: https://raw.githubusercontent.com/api-evangelist/gomultiply/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +19,32 @@ x-backed-by:
 - mayfield
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://www.gomultiply.com/favicon.png
 tags:
 - Company
+- Advertising
+- Marketing
+- Artificial Intelligence
+- B2B
+- Paid Media
+- Agency
+- MarTech
+- LinkedIn Ads
+- Google Ads
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +54,20 @@ maintainers:
 common:
 - type: Website
   url: https://gomultiply.com
+- type: Pricing
+  url: https://www.gomultiply.com/pricing
+- type: PrivacyPolicy
+  url: https://www.gomultiply.com/privacy
+- type: Login
+  url: https://app.getkalos.com
+- type: SignUp
+  url: https://www.gomultiply.com/demo
+- type: Blog
+  url: https://www.gomultiply.com/news
+- type: DomainSecurity
+  url: security/gomultiply-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
