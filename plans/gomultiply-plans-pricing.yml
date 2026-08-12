@@ -1,0 +1,88 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.gomultiply.com/pricing
+description: >-
+  Multiply (gomultiply.com) publishes a three-tier public pricing page for its managed
+  AI paid-media service. The tiers price the SERVICE — a managed ad program run by AI
+  agents plus a dedicated human strategist — and are banded by the customer's monthly ad
+  spend, not by API consumption. There is no API plan, no developer tier, no metered
+  request pricing and no free tier: Multiply sells an agency engagement, not API access.
+  The prices below are recorded verbatim from the public pricing page.
+plan_count: 3
+plans:
+  - id: gomultiply-growth
+    name: Growth
+    type: subscription
+    price: 6000
+    price_label: Starting at $6K per month
+    currency: USD
+    billing_period: monthly
+    audience: B2B companies spending $10K-100K per month on ads
+    limits:
+      ad_spend_band: $10K-$100K monthly
+    included:
+      - Managed service
+      - AI agents
+      - Dedicated strategist
+    channels:
+      - LinkedIn Ads
+      - Google Ads
+      - ChatGPT Ads
+  - id: gomultiply-scale
+    name: Scale
+    type: subscription
+    price: 12000
+    price_label: Starting at $12K per month
+    currency: USD
+    billing_period: monthly
+    audience: B2B companies spending $100K-250K per month on ads
+    limits:
+      ad_spend_band: $100K-$250K monthly
+    included:
+      - Managed service
+      - AI agents
+      - Dedicated strategist
+      - Premier Support
+    channels:
+      - LinkedIn Ads
+      - Google Ads
+      - ChatGPT Ads
+  - id: gomultiply-enterprise
+    name: Enterprise
+    type: custom
+    price: null
+    price_label: Custom pricing
+    currency: USD
+    billing_period: negotiated
+    audience: large teams with specific requirements
+    limits:
+      ad_spend_band: not published
+    included:
+      - Everything in Scale
+      - Custom integrations
+      - Custom reporting
+    channels:
+      - LinkedIn Ads
+      - Google Ads
+      - ChatGPT Ads
+commercial_model:
+  type: managed-service-retainer
+  metered_on: customer monthly ad spend band
+  developer_pricing_published: false
+  free_tier: false
+  trial: false
+  onboarding: book a demo (https://www.gomultiply.com/demo)
+  note: >-
+    "Custom integrations" is named as an Enterprise-tier deliverable but no API,
+    developer portal, SDK or integration reference is published anywhere on the public
+    surface — it is a bespoke professional-services line item, not a documented product.
+searched:
+  - url: https://www.gomultiply.com/pricing
+    status: 200
+    found: three tiers (Growth, Scale, Enterprise) with monthly retainer pricing
+  - url: https://www.gomultiply.com/product
+    status: 200
+    found: no API, developer program, SDK or webhook mentioned
+  - url: https://www.gomultiply.com/sitemap.xml
+    status: 200
+    found: 17 URLs, none of them a developer, docs, API or terms page

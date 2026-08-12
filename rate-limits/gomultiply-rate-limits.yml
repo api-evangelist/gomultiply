@@ -1,0 +1,33 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  live unauthenticated responses from api.getkalos.com plus a full search of
+  gomultiply.com for published limits
+description: >-
+  Multiply documents no rate limits, because it documents no API. The only first-party
+  host that answers publicly, api.getkalos.com (the backend for the app.getkalos.com
+  customer application), returns HTTP 200 on its root with the plain-text body
+  "yay response" and emits no rate-limit signalling headers of any kind — no
+  X-RateLimit-*, no RateLimit-* (RFC 9331 style), no Retry-After. Every other path on
+  that host 404s. There is nothing an agent could read as a runtime budget signal.
+  limit_count is an honest zero, not a harvesting gap.
+limit_count: 0
+limits: []
+headers_observed:
+  x_ratelimit_family: false
+  ratelimit_family: false
+  retry_after: false
+  note: >-
+    Response headers on the HTTP 200 from https://api.getkalos.com/ were date and
+    content-type only. No throttling, quota, or retry signal is emitted.
+exhaustion_status_code: null
+searched:
+  - url: https://api.getkalos.com/
+    status: 200
+    found: no rate-limit response headers
+  - url: https://www.gomultiply.com/pricing
+    status: 200
+    found: tiers banded by monthly ad spend; no API quota, request limit, or throttle
+  - url: https://www.gomultiply.com/sitemap.xml
+    status: 200
+    found: no developer, docs, or API reference page in which limits could be published

@@ -20,19 +20,21 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: paid
+  onboarding: sales
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Paid, sales-onboarded managed service
+  confidence: high
+  source:
+  - https://www.gomultiply.com/pricing
+  - https://www.gomultiply.com/demo
+  generated: '2026-08-12'
+  method: searched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-12'
 image: https://www.gomultiply.com/favicon.png
 tags:
 - Company
@@ -66,8 +68,49 @@ common:
   url: https://www.gomultiply.com/news
 - type: DomainSecurity
   url: security/gomultiply-domain-security.yml
+- type: LLMsTxt
+  url: llms/gomultiply-llms.txt
+- type: Plans
+  url: plans/gomultiply-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/gomultiply-rate-limits.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Full STEP 0b contract discovery run against www.gomultiply.com, getkalos.com (the
+    legacy brand host, which 301s to gomultiply.com), app.getkalos.com and
+    api.getkalos.com. No OpenAPI, Swagger, GraphQL, MCP, AsyncAPI, gRPC or A2A agent
+    card exists on any host. The one real provider-published machine-readable artifact
+    is /llms.txt, saved verbatim; the public pricing page yielded three real service
+    tiers. Ownership note — docs.multiply.ai and github.com/multiply-ai belong to
+    Multiply AI, a DIFFERENT (UK financial-advice) company, and were explicitly excluded.
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Multiply sells a managed AI paid-media agency engagement, not a developer product —
+    its 17-URL sitemap contains no developer, docs, API, terms or status page, and its
+    one publicly reachable backend, api.getkalos.com, answers its root with the
+    plain-text string "yay response" while 404ing every OpenAPI, GraphQL, MCP and
+    /.well-known/ path.
+  evidence:
+  - url: https://www.gomultiply.com/llms.txt
+    status: 200
+  - url: https://www.gomultiply.com/openapi.json
+    status: 404
+  - url: https://www.gomultiply.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.getkalos.com/
+    status: 200
+  - url: https://api.getkalos.com/openapi.json
+    status: 404
+  - url: https://api.getkalos.com/graphql
+    status: 404
+  - url: https://api.getkalos.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.gomultiply.com/sitemap.xml
+    status: 200
+  checked: '2026-08-12'

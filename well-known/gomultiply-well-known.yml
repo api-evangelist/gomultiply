@@ -1,0 +1,77 @@
+generated: '2026-08-12'
+method: probed
+source: live probes of /.well-known/ on every Multiply (Gomultiply) host
+description: >-
+  Every /.well-known/ path was probed on the marketing host (www.gomultiply.com), the
+  legacy brand host (getkalos.com, which 301s to www.gomultiply.com), the application
+  host (app.getkalos.com) and the application backend host (api.getkalos.com). Nothing
+  is served. This file records a verified ABSENCE — no WellKnown or SecurityTxt pointer
+  is wired into apis.yml, because the provider serves none of these documents.
+hosts:
+  - host: https://www.gomultiply.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://getkalos.com
+    note: legacy brand host; 301s to https://www.gomultiply.com/
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://app.getkalos.com
+    note: >-
+      customer application (the Login link in apis.yml). Answers 404 with an HTML error
+      document on every path probed, including the application root.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://api.getkalos.com
+    note: >-
+      the application's private backend. The root returns HTTP 200 with the plain-text
+      body "yay response" and every other path returns 404 "not found" — there is no
+      published contract, reference, or discovery document behind it.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+summary:
+  hosts_probed: 4
+  paths_probed: 25
+  documents_found: 0
+  security_txt: false
+  agent_card: false
+x-evidence:
+  fetched: '2026-08-12'
+  method: curl -sIL, following redirects

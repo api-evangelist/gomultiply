@@ -1,0 +1,58 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  registry sweeps of npm, PyPI, RubyGems, crates.io, NuGet, Maven Central, pkg.go.dev
+  and Packagist, plus a GitHub organization search, for Multiply / Gomultiply / Kalos
+description: >-
+  Multiply publishes no client libraries. It sells a managed AI paid-media service, not
+  a developer product, so there is no SDK, CLI, or CDN-distributed component to record.
+  Every registry lookup and organization lookup below is a real probe; package_count is
+  an honest zero, not a harvesting gap. No Packages or SDKs pointer is wired into
+  apis.yml, because there is nothing to point at.
+package_count: 0
+packages: []
+searched:
+  - registry: npm
+    query: gomultiply
+    result: 0 results
+  - registry: npm
+    query: getkalos
+    result: 0 results
+  - registry: npm
+    package: gomultiply
+    status: 404
+  - registry: npm
+    package: getkalos
+    status: 404
+  - registry: pypi
+    package: gomultiply
+    status: 404
+  - registry: pypi
+    package: kalos
+    status: 200
+    result: >-
+      unrelated third party — "kalos" 0.8.0 on PyPI is a computer-vision dataset-quality
+      evaluation library, not a Multiply product. Not recorded.
+  - registry: github
+    org: gomultiply
+    status: 404
+  - registry: github
+    org: getkalos
+    status: 200
+    result: >-
+      organization exists (created 2024-04-29) but has 0 public repositories and no
+      name, description, blog or email linking it to gomultiply.com. Not wired as
+      GitHubOrganization — an empty, unattributed org is not evidence of ownership.
+  - registry: github
+    org: multiply-ai
+    status: 200
+    result: >-
+      DIFFERENT COMPANY — github.com/multiply-ai (created 2022) belongs to Multiply AI,
+      the UK financial-advice product at multiply.ai / docs.multiply.ai. Explicitly
+      excluded.
+  - registry: github
+    org: kalos-ai
+    status: 200
+    result: >-
+      unrelated — two forks (huggingface/diffusers, FFmpeg) with no link to
+      gomultiply.com. Excluded.
