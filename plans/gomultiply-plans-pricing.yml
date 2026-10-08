@@ -86,3 +86,29 @@ searched:
   - url: https://www.gomultiply.com/sitemap.xml
     status: 200
     found: 17 URLs, none of them a developer, docs, API or terms page
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  - subscription
+  units: []
+  plans:
+  - name: Growth
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Scale
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Enterprise
+    access: negotiated
+    model: negotiated
+    model_how: stated
+    units: []
+    periods: []
