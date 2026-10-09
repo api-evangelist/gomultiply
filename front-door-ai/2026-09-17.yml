@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: gomultiply.com
   final_host: www.gomultiply.com
-  ownership: inherited
+  ownership: own
   owner: gomultiply
   shares_host_with: null
-  inherited_from: www.gomultiply.com
+  inherited_from: null
+  alias_of: www.gomultiply.com
   verdict: scored
-  score: null
+  score: 3
+  band: 3
+  band_label: light
   host_score: 3
-  density: null
+  density: 57.69
   words: 52
   tiers:
     agentic: 0
